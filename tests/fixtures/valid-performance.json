@@ -1,0 +1,28 @@
+{
+  "campaign_id": "campaign-001",
+  "creator_id": "creator-001",
+  "objective": "sales",
+  "captured_at": "2026-09-01T12:00:00Z",
+  "metrics": {
+    "views": 42500,
+    "reach": 36100,
+    "hook_rate": 0.41,
+    "hold_rate": 0.29,
+    "average_watch_time_seconds": 11.8,
+    "completion_rate": 0.22,
+    "likes": 940,
+    "comments": 88,
+    "shares": 121,
+    "saves": 173,
+    "ctr": 0.021,
+    "leads": null,
+    "purchases": 37,
+    "revenue": 5920,
+    "cost_per_lead": null,
+    "cost_per_acquisition": 31.4,
+    "roas": 3.1,
+    "affiliate_revenue": null
+  },
+  "unknown_metrics": ["leads", "cost_per_lead", "affiliate_revenue"],
+  "evidence_sources": ["paid media platform export", "approved sales attribution report"]
+}
