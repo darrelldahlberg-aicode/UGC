@@ -1,0 +1,44 @@
+{
+  "campaign_id": "campaign-001",
+  "creator_id": "creator-001",
+  "objective": "sales",
+  "audience": "Homeowners researching a practical home product",
+  "product_or_service": "Example home product",
+  "offer": "Approved introductory offer",
+  "primary_promise": "Show how the product solves the approved use case",
+  "cta": "Shop the approved offer",
+  "concept": "Creator demonstrates the product in a normal home routine",
+  "deliverables": ["one 30-second vertical video", "one alternate opening hook"],
+  "due_dates": {
+    "draft_due": "2026-08-20",
+    "final_due": "2026-08-24"
+  },
+  "revision_terms": "One revision round for brief compliance",
+  "rate": 500,
+  "payment_terms": "Net 15 after approved final delivery",
+  "required_disclosures": ["Paid partnership disclosure when creator-posted"],
+  "prohibited_claims": ["Unapproved performance guarantees"],
+  "rights": {
+    "organic_posting": "approved",
+    "brand_usage": "approved",
+    "paid_media": "approved",
+    "whitelisting": "not_required",
+    "start_date": "2026-08-14",
+    "end_date": "2026-11-14"
+  },
+  "approvals": {
+    "strategy": "approved",
+    "creative": "approved",
+    "brand": "approved",
+    "quality": "approved",
+    "media": "approved",
+    "final": "approved"
+  },
+  "deployment_destination": "paid_media",
+  "measurement_plan": {
+    "objective": "sales",
+    "primary_metrics": ["purchases", "revenue", "cost_per_acquisition", "roas"],
+    "evidence_sources": ["paid media platform", "approved sales attribution source"]
+  },
+  "status": "approved"
+}
