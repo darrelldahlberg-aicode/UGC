@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ugc.local/schemas/campaign.schema.json",
+  "title": "UGC Campaign Record",
+  "type": "object",
+  "required": [
+    "campaign_id",
+    "creator_id",
+    "objective",
+    "audience",
+    "product_or_service",
+    "offer",
+    "primary_promise",
+    "cta",
+    "concept",
+    "deliverables",
+    "due_dates",
+    "revision_terms",
+    "rate",
+    "payment_terms",
+    "required_disclosures",
+    "prohibited_claims",
+    "rights",
+    "approvals",
+    "deployment_destination",
+    "measurement_plan",
+    "status"
+  ],
+  "properties": {
+    "campaign_id": {"type": "string", "minLength": 1},
+    "creator_id": {"type": "string", "minLength": 1},
+    "objective": {"type": "string", "minLength": 1},
+    "audience": {"type": "string", "minLength": 1},
+    "product_or_service": {"type": "string", "minLength": 1},
+    "offer": {"type": "string", "minLength": 1},
+    "primary_promise": {"type": "string", "minLength": 1},
+    "cta": {"type": "string", "minLength": 1},
+    "concept": {"type": "string", "minLength": 1},
+    "deliverables": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "due_dates": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {"type": "string", "format": "date"}
+    },
+    "revision_terms": {"type": "string", "minLength": 1},
+    "rate": {"type": "number", "minimum": 0},
+    "payment_terms": {"type": "string", "minLength": 1},
+    "required_disclosures": {"type": "array", "items": {"type": "string"}},
+    "prohibited_claims": {"type": "array", "items": {"type": "string"}},
+    "rights": {
+      "type": "object",
+      "required": ["organic_posting", "brand_usage", "paid_media", "whitelisting", "start_date", "end_date"],
+      "properties": {
+        "organic_posting": {"$ref": "#/$defs/permission"},
+        "brand_usage": {"$ref": "#/$defs/permission"},
+        "paid_media": {"$ref": "#/$defs/permission"},
+        "whitelisting": {"$ref": "#/$defs/permission"},
+        "start_date": {
+          "anyOf": [
+            {"type": "string", "format": "date"},
+            {"type": "null"}
+          ]
+        },
+        "end_date": {
+          "anyOf": [
+            {"type": "string", "format": "date"},
+            {"type": "null"}
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "approvals": {
+      "type": "object",
+      "required": ["strategy", "creative", "brand", "quality", "media", "final"],
+      "properties": {
+        "strategy": {"$ref": "#/$defs/approval"},
+        "creative": {"$ref": "#/$defs/approval"},
+        "brand": {"$ref": "#/$defs/approval"},
+        "quality": {"$ref": "#/$defs/approval"},
+        "media": {"$ref": "#/$defs/approval"},
+        "final": {"$ref": "#/$defs/approval"}
+      },
+      "additionalProperties": false
+    },
+    "deployment_destination": {
+      "type": "string",
+      "enum": ["organic", "paid_media", "both", "not_selected"]
+    },
+    "measurement_plan": {
+      "type": "object",
+      "required": ["objective", "primary_metrics", "evidence_sources"],
+      "properties": {
+        "objective": {"type": "string", "minLength": 1},
+        "primary_metrics": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "evidence_sources": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1}
+        }
+      },
+      "additionalProperties": false
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "briefing", "in_production", "quality_review", "approved", "deployed", "completed", "blocked"]
+    }
+  },
+  "$defs": {
+    "permission": {
+      "type": "string",
+      "enum": ["approved", "not_approved", "not_required", "unknown"]
+    },
+    "approval": {
+      "type": "string",
+      "enum": ["pending", "approved", "rejected", "not_required"]
+    }
+  },
+  "additionalProperties": false
+}
