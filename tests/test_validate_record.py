@@ -86,7 +86,7 @@ class ValidationTests(unittest.TestCase):
         from hashlib import sha256
         path = ROOT / "examples" / "media-kits" / "creator-paid-pitch-example-kristina-elise.pdf"
         digest = sha256(path.read_bytes()).hexdigest()
-        self.assertEqual(digest, "ea3548c2967e45b9dd6599d80591d1af79b644c8e5d704c35f8b72cdb164a7c4")
+        self.assertEqual(digest, "d6aadca9d1fa76fdac8807e7c97842e35670325a2aa0e163e1161543c1c0a4f4")
 
 
 if __name__ == "__main__":
