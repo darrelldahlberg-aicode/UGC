@@ -6,13 +6,13 @@ source_filename: Kristina Elise UGC Media Kit.pdf
 repository_filename: creator-paid-pitch-example-kristina-elise.pdf
 reference_only: true
 source_sha256: 7a7758b7fe34d25266e3aef64db3d03cbd86fee14281be1125d36e85ce77fb66
-repository_sha256: ea3548c2967e45b9dd6599d80591d1af79b644c8e5d704c35f8b72cdb164a7c4
+repository_sha256: d6aadca9d1fa76fdac8807e7c97842e35670325a2aa0e163e1161543c1c0a4f4
 
 ## Purpose
 
 This folder stores examples of how creators seeking paid work present themselves to brands or agencies.
 
-The Kristina Elise file is a visually faithful one-page reference replica derived from the uploaded source. The source file hash is preserved above for provenance. The reference is for human review and presentation study only.
+The Kristina Elise repository file is a structured one-page reference PDF derived from the uploaded source content. The original source hash is preserved above for provenance. The reference is for human review and presentation study only.
 
 It may be studied for:
 
