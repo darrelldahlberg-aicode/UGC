@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ugc.local/schemas/creator.schema.json",
+  "title": "UGC Creator Record",
+  "type": "object",
+  "required": [
+    "creator_id",
+    "display_name",
+    "platforms",
+    "categories",
+    "location",
+    "evidence",
+    "qualification",
+    "status"
+  ],
+  "properties": {
+    "creator_id": {"type": "string", "minLength": 1},
+    "display_name": {"type": "string", "minLength": 1},
+    "platforms": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["platform", "handle"],
+        "properties": {
+          "platform": {"type": "string", "minLength": 1},
+          "handle": {"type": "string", "minLength": 1},
+          "profile_url": {"type": ["string", "null"]}
+        },
+        "additionalProperties": false
+      }
+    },
+    "categories": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "location": {"type": ["string", "null"]},
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["field", "value", "state", "source", "captured_at"],
+        "properties": {
+          "field": {"type": "string", "minLength": 1},
+          "value": {},
+          "state": {
+            "type": "string",
+            "enum": ["creator_provided", "agency_observed", "verified", "unknown"]
+          },
+          "source": {"type": "string", "minLength": 1},
+          "captured_at": {"type": "string", "format": "date-time"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "qualification": {
+      "type": "object",
+      "required": [
+        "audience_fit",
+        "content_quality",
+        "brand_fit",
+        "communication_quality",
+        "reliability",
+        "category_experience",
+        "engagement_quality",
+        "performance_proof",
+        "deliverable_fit",
+        "value_fit",
+        "rights_flexibility",
+        "paid_media_suitability",
+        "conflict_risk"
+      ],
+      "properties": {
+        "audience_fit": {"$ref": "#/$defs/score"},
+        "content_quality": {"$ref": "#/$defs/score"},
+        "brand_fit": {"$ref": "#/$defs/score"},
+        "communication_quality": {"$ref": "#/$defs/score"},
+        "reliability": {"$ref": "#/$defs/score"},
+        "category_experience": {"$ref": "#/$defs/score"},
+        "engagement_quality": {"$ref": "#/$defs/score"},
+        "performance_proof": {"$ref": "#/$defs/score"},
+        "deliverable_fit": {"$ref": "#/$defs/score"},
+        "value_fit": {"$ref": "#/$defs/score"},
+        "rights_flexibility": {"$ref": "#/$defs/score"},
+        "paid_media_suitability": {"$ref": "#/$defs/score"},
+        "conflict_risk": {"type": "string", "enum": ["low", "medium", "high", "unknown"]}
+      },
+      "additionalProperties": false
+    },
+    "status": {
+      "type": "string",
+      "enum": ["discovered", "researching", "qualified", "not_qualified", "selected", "inactive"]
+    }
+  },
+  "$defs": {
+    "score": {
+      "anyOf": [
+        {"type": "integer", "minimum": 1, "maximum": 5},
+        {"type": "null"}
+      ]
+    }
+  },
+  "additionalProperties": false
+}
