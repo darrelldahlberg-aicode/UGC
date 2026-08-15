@@ -1,0 +1,45 @@
+{
+  "creator_id": "creator-001",
+  "display_name": "Example Creator",
+  "platforms": [
+    {
+      "platform": "tiktok",
+      "handle": "@examplecreator",
+      "profile_url": "https://example.com/creator"
+    }
+  ],
+  "categories": ["home"],
+  "location": "Dallas, TX",
+  "evidence": [
+    {
+      "field": "average_project_turnaround",
+      "value": "7 days",
+      "state": "creator_provided",
+      "source": "creator email dated 2026-08-10",
+      "captured_at": "2026-08-10T15:00:00Z"
+    },
+    {
+      "field": "content_style",
+      "value": "clear product demonstrations with direct-to-camera delivery",
+      "state": "agency_observed",
+      "source": "public profile review",
+      "captured_at": "2026-08-11T16:30:00Z"
+    }
+  ],
+  "qualification": {
+    "audience_fit": 4,
+    "content_quality": 4,
+    "brand_fit": 5,
+    "communication_quality": 3,
+    "reliability": null,
+    "category_experience": 4,
+    "engagement_quality": 3,
+    "performance_proof": 2,
+    "deliverable_fit": 5,
+    "value_fit": 3,
+    "rights_flexibility": 3,
+    "paid_media_suitability": 4,
+    "conflict_risk": "unknown"
+  },
+  "status": "qualified"
+}
