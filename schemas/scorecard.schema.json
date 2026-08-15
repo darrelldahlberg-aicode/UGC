@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ugc.local/schemas/scorecard.schema.json",
+  "title": "UGC Creator Scorecard",
+  "type": "object",
+  "required": ["creator_id", "campaign_id", "qualification_summary", "campaign_operating_experience", "content_quality", "approval_performance", "delivery_reliability", "rights_flexibility", "audience_response", "business_results", "cost_efficiency", "reusable_learning", "decision"],
+  "properties": {
+    "creator_id": {"type": "string", "minLength": 1},
+    "campaign_id": {"type": "string", "minLength": 1},
+    "qualification_summary": {"type": "string", "minLength": 1},
+    "campaign_operating_experience": {"type": "string", "minLength": 1},
+    "content_quality": {"type": "string", "minLength": 1},
+    "approval_performance": {"type": "string", "minLength": 1},
+    "delivery_reliability": {"type": "string", "minLength": 1},
+    "rights_flexibility": {"type": "string", "minLength": 1},
+    "audience_response": {"type": "string", "minLength": 1},
+    "business_results": {"type": "string", "minLength": 1},
+    "cost_efficiency": {"type": "string", "minLength": 1},
+    "reusable_learning": {"type": "string", "minLength": 1},
+    "decision": {
+      "type": "string",
+      "enum": ["renew", "retain_specific_use", "retest_new_variable", "pause", "retire"]
+    }
+  },
+  "additionalProperties": false
+}
