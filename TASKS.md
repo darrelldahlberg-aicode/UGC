@@ -12,14 +12,22 @@
 - [x] Add neutral media-kit template
 - [x] Add Kristina Elise media kit as a reference-only example
 - [x] Add future dedicated UGC agent boundary
+- [x] Lock production approval ownership
+- [x] Lock production record storage rules
+- [x] Add first-live-campaign operating runbook
 
-## Operating Follow-Up
+## Live Activation
 
-- [ ] Run Version 1 against the first live creator campaign
-- [ ] Confirm named approval owners for strategy, creative, brand, quality, media, and final approval
-- [ ] Decide the production storage location for approved creator, campaign, performance, and scorecard records
-- [ ] Add vertical-specific outreach variants after real campaign evidence exists
-- [ ] Add paid-usage extension negotiation guidance after real negotiation evidence exists
+- [ ] Run Version 1 against the first actual live creator campaign
+
+This item requires a real creator, real campaign scope, approved client storage destination, and real campaign evidence. Do not satisfy it with synthetic data or the Kristina reference example.
+
+## Evidence-Driven Enhancements
+
+Add these only after real campaign or negotiation evidence exists:
+
+- [ ] Add vertical-specific outreach variants
+- [ ] Add paid-usage extension negotiation guidance
 
 ## Future Dedicated UGC Runtime
 
