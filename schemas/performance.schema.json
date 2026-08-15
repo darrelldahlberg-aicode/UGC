@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ugc.local/schemas/performance.schema.json",
+  "title": "UGC Performance Record",
+  "type": "object",
+  "required": ["campaign_id", "creator_id", "objective", "captured_at", "metrics", "unknown_metrics", "evidence_sources"],
+  "properties": {
+    "campaign_id": {"type": "string", "minLength": 1},
+    "creator_id": {"type": "string", "minLength": 1},
+    "objective": {"type": "string", "minLength": 1},
+    "captured_at": {"type": "string", "format": "date-time"},
+    "metrics": {
+      "type": "object",
+      "required": ["views", "reach", "hook_rate", "hold_rate", "average_watch_time_seconds", "completion_rate", "likes", "comments", "shares", "saves", "ctr", "leads", "purchases", "revenue", "cost_per_lead", "cost_per_acquisition", "roas", "affiliate_revenue"],
+      "properties": {
+        "views": {"$ref": "#/$defs/nullable_number"},
+        "reach": {"$ref": "#/$defs/nullable_number"},
+        "hook_rate": {"$ref": "#/$defs/nullable_number"},
+        "hold_rate": {"$ref": "#/$defs/nullable_number"},
+        "average_watch_time_seconds": {"$ref": "#/$defs/nullable_number"},
+        "completion_rate": {"$ref": "#/$defs/nullable_number"},
+        "likes": {"$ref": "#/$defs/nullable_number"},
+        "comments": {"$ref": "#/$defs/nullable_number"},
+        "shares": {"$ref": "#/$defs/nullable_number"},
+        "saves": {"$ref": "#/$defs/nullable_number"},
+        "ctr": {"$ref": "#/$defs/nullable_number"},
+        "leads": {"$ref": "#/$defs/nullable_number"},
+        "purchases": {"$ref": "#/$defs/nullable_number"},
+        "revenue": {"$ref": "#/$defs/nullable_number"},
+        "cost_per_lead": {"$ref": "#/$defs/nullable_number"},
+        "cost_per_acquisition": {"$ref": "#/$defs/nullable_number"},
+        "roas": {"$ref": "#/$defs/nullable_number"},
+        "affiliate_revenue": {"$ref": "#/$defs/nullable_number"}
+      },
+      "additionalProperties": false
+    },
+    "unknown_metrics": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": ["views", "reach", "hook_rate", "hold_rate", "average_watch_time_seconds", "completion_rate", "likes", "comments", "shares", "saves", "ctr", "leads", "purchases", "revenue", "cost_per_lead", "cost_per_acquisition", "roas", "affiliate_revenue"]
+      }
+    },
+    "evidence_sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    }
+  },
+  "$defs": {
+    "nullable_number": {
+      "anyOf": [
+        {"type": "number"},
+        {"type": "null"}
+      ]
+    }
+  },
+  "additionalProperties": false
+}
